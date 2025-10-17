@@ -1,0 +1,30 @@
+import express from 'express';
+import dotenv from 'dotenv';
+import 'express-async-errors';
+import connectDB from './database/config';
+import authRoutes from './routes/authRoutes';
+import protectedRoutes from './routes/protectedRoutes';
+import { errorHandler } from './middlewares/erroMiddleware';
+import logger from './utils/logger';
+
+dotenv.config();
+
+const app = express();
+const PORT = process.env.PORT || 5000;
+
+// Conecta ao Banco de Dados
+connectDB();
+
+// Middlewares
+app.use(express.json());
+
+// Rotas
+app.use('/api', authRoutes);
+app.use('/api', protectedRoutes);
+
+// Middleware de Erro (deve ser o último)
+app.use(errorHandler);
+
+app.listen(PORT, () => {
+  logger.info(`Servidor rodando na porta ${PORT}`);
+});
