@@ -18,6 +18,14 @@ connectDB();
 // Middlewares
 app.use(express.json());
 
+app.get('/', (req, res) => {
+  res.status(200).json({ 
+    message: 'API do MiniProjeto está no ar!',
+    status: 'OK',
+    timestamp: new Date().toISOString() 
+  });
+});
+
 // Rotas
 app.use('/api', authRoutes);
 app.use('/api', protectedRoutes);
