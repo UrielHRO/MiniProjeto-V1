@@ -1,7 +1,7 @@
 
 # MiniProjeto I - API com Node.js, Express e MongoDB
 
-Este é um projeto de API backend desenvolvido com Node.js (TypeScript), Express e MongoDB. Ele inclui funcionalidades de autenticação de usuários com JWT, seguindo uma arquitetura de camadas e utilizando Docker para o ambiente de banco de dados local.
+Este é um projeto de API backend desenvolvido com Node.js (TypeScript), Express e MongoDB. Ele inclui funcionalidades de autenticação de usuários com JWT, seguindo uma arquitetura de camadas e utilizando Docker para o ambiente de banco de dados local e mongoDB atlas para ambiente em produção.
 
 ## Funcionalidades Principais
 
@@ -37,7 +37,7 @@ Siga os passos abaixo para configurar e rodar o projeto na sua máquina:
     docker-compose up -d
     ```
 
-    Isso iniciará um contêiner MongoDB e outro para o Mongo Express (interface de administração). O Mongo Express estará disponível em `http://localhost:[PORTA]` e com os usuário e senha setados pela imagem do docker-compose.yml .
+    Isso iniciará um contêiner MongoDB e outro para o Mongo Express (interface de administração). O Mongo Express estará disponível em `http://localhost:[PORTA]` e com os usuário e senha setados pela imagem do mongoDB no docker-compose.yml .
 
 5.  **Iniciar a Aplicação:**
 
@@ -49,7 +49,7 @@ Siga os passos abaixo para configurar e rodar o projeto na sua máquina:
 
 6.  **Testar a API:**
 
-      * Use o Postman (o arquivo de coleção está na pasta `requests/`) ou Insomnia para testar os endpoints:
+      * Use o Postman (o arquivo de coleção está na pasta `requests/`) para testar os endpoints:
           * `http://localhost:[PORTA]/` (para a rota de boas-vindas)
           * `http://localhost:[PORTA]/api/register`
           * `http://localhost:[PORTA]/api/login`
