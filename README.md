@@ -59,4 +59,4 @@ Siga os passos abaixo para configurar e rodar o projeto na sua máquina:
 
 Assista ao vídeo para uma demonstração geral do projeto e suas funcionalidades:
 
-[https://youtu.be/1CeWAzOk6lc](https://youtu.be/1CeWAzOk6lc)
+[https://youtu.be/1CeWAzOk6lc](https://youtu.be/Q-Mz-auj3)
