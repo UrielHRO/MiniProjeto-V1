@@ -2,6 +2,20 @@ import { Request, Response, NextFunction } from 'express';
 import jwt from 'jsonwebtoken';
 import logger from '../utils/logger';
 
+// Adicionamos a interface do payload do JWT
+interface JwtPayload {
+  id: string;
+}
+
+// Estendemos a interface Request do Express para incluir o usuário
+declare global {
+  namespace Express {
+    interface Request {
+      user?: JwtPayload;
+    }
+  }
+}
+
 export const protect = (req: Request, res: Response, next: NextFunction) => {
   let token;
   const authHeader = req.headers.authorization;
@@ -15,7 +29,10 @@ export const protect = (req: Request, res: Response, next: NextFunction) => {
         throw new Error('Chave secreta JWT não encontrada.');
       }
 
-      jwt.verify(token, secret);
+      // Decodifica o token e anexa o payload (com o ID do usuário) ao request
+      const decoded = jwt.verify(token, secret) as JwtPayload;
+      req.user = decoded; // Agora req.user.id estará disponível nas rotas protegidas
+
       logger.info('Token JWT verificado com sucesso.');
       next();
     } catch (error) {

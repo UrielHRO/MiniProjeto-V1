@@ -4,6 +4,7 @@ import 'express-async-errors';
 import connectDB from './database/config';
 import authRoutes from './routes/authRoutes';
 import protectedRoutes from './routes/protectedRoutes';
+import noteRoutes from './routes/noteRoutes'; // <-- 1. IMPORTAR AS NOVAS ROTAS
 import { errorHandler } from './middlewares/erroMiddleware';
 import logger from './utils/logger';
 
@@ -18,6 +19,7 @@ connectDB();
 // Middlewares
 app.use(express.json());
 
+// Rota de boas-vindas para a raiz da API
 app.get('/', (req, res) => {
   res.status(200).json({ 
     message: 'API do MiniProjeto está no ar!',
@@ -26,9 +28,10 @@ app.get('/', (req, res) => {
   });
 });
 
-// Rotas
+// Rotas da API
 app.use('/api', authRoutes);
 app.use('/api', protectedRoutes);
+app.use('/api/notes', noteRoutes); // <-- 2. ADICIONAR AS NOVAS ROTAS AQUI
 
 // Middleware de Erro (deve ser o último)
 app.use(errorHandler);
