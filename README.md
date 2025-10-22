@@ -36,7 +36,7 @@ Siga os passos abaixo para configurar e rodar o projeto no seu ambiente de desen
 
 1.  **Clone o repositório:**
     ```bash
-    git clone [https://github.com/seu-usuario/seu-repositorio-mongo.git](https://github.com/seu-usuario/seu-repositorio-mongo.git)
+    git clone 
     cd seu-repositorio-mongo
     ```
 
