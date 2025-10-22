@@ -105,3 +105,10 @@ A URL base para a API é `/api`.
 ## ☁️ Deploy
 
 A aplicação está configurada para deploy contínuo na [Vercel](https://mini-projeto-v1.vercel.app/). Para o ambiente de produção, é necessário configurar a variável de ambiente `MONGO_URI_PROD` no painel da Vercel com a string de conexão do [MongoDB Atlas](https://www.mongodb.com/cloud/atlas).
+
+
+## 📺 Vídeos da Implementação
+
+A primeira parte deste projeto, focada na implementação do sistema de registro, login e autenticação JWT, foi detalhada em vídeo:
+
+[**Assista o Vídeo Aqui: Implementando Autenticação com JWT (MongoDB)**](https://youtu.be/Q-Mz-auj3nA)
