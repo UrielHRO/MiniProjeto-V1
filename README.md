@@ -36,7 +36,7 @@ Siga os passos abaixo para configurar e rodar o projeto no seu ambiente de desen
 
 1.  **Clone o repositório:**
     ```bash
-    git clone 
+    git clone https://github.com/UrielHRO/backend-express-mongoDB.git
     cd seu-repositorio-mongo
     ```
 
