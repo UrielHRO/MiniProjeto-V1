@@ -112,5 +112,8 @@ A aplicação está configurada para deploy contínuo na [Vercel](https://mini-p
 A primeira parte deste projeto, focada na implementação do sistema de registro, login e autenticação JWT, foi detalhada em vídeo:
 
 [**Assista o Vídeo Aqui: Implementando Autenticação com JWT (MongoDB)**](https://youtu.be/Q-Mz-auj3nA)
+
+A segunda parte do projeto, focada na implementação do CRUD de anotações pessoas, foi detalhada em vídeo:
+
 [**Assista o Vídeo Aqui: Implementando CRUD de Anotações Pessoais**](https://youtu.be/MfMwolnCX0c)
 
