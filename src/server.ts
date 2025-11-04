@@ -31,7 +31,7 @@ app.get('/', (req, res) => {
 });
 
 // Rotas da API
-app.use('/api', authRoutes);
+app.use('/api/auth', authRoutes);
 app.use('/api', protectedRoutes);
 app.use('/api/notes', noteRoutes); 
 
