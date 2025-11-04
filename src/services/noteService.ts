@@ -7,11 +7,23 @@ export const createNote = async (data: { title: string; content: string }, userI
   return note;
 };
 
-// Listar todas as anotações de um usuário (com filtros)
+// Listar todas as anotações de um usuário (COM A CORREÇÃO)
 export const getNotes = async (userId: string, filters: any) => {
-  const query = { user: userId, ...filters };
-  const notes = await Note.find(query);
-  return notes;
+  const { title, ...otherFilters } = filters;
+  const query: any = { 
+    user: userId,
+    ...otherFilters // Mantém outros filtros (ex: ?category=trabalho)
+  }; 
+
+  if (title && title.length > 0) {
+    query.title = {
+      $regex: title,   // <-- A palavra-chave "Contém"
+      $options: 'i'    // <-- 'i' = case-insensitive (ignora maiúsculas/minúsculas)
+    };
+  }
+
+  const notes = await Note.find(query).sort({ createdAt: -1 }); // Adicionei um .sort()
+  return notes;
 };
 
 // Obter uma anotação específica por ID
