@@ -35,3 +35,8 @@ export const login = async (req: Request, res: Response) => {
         return res.status(status).json({ message });
     }
 };
+
+
+export const getProtectedData = (req: any, res: any) => {
+  res.json({ message: "Rota de teste OK" });
+};
